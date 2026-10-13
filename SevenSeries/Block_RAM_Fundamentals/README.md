@@ -9,7 +9,7 @@ This tutorial is a hands-on look at 7 Series block RAM (RAMB18E1 / RAMB36E1). Yo
 3. Measure the **Fmax gain from the BRAM output register** with an out-of-context (OOC) run.
 4. Build a **deep, pipelined, multi-bank buffer** and look at how it is placed across the **SLRs** of the XC7V2000T.
 
-> **Verification status:** both testbenches pass in Icarus Verilog 12, using the RAMB18E1 and glbl models from AMD's open-source [UNISIM library](https://github.com/Xilinx/XilinxUnisimLibrary). The deep buffer also passes with `AW` = 11, 13 and 17 and with `GROUP` values that do not divide the bank count. The Vivado scripts (`run_sim.tcl`, `run_xsim.sh`), synthesis, OOC implementation and SLR pblock steps **have not been run in Vivado yet**, so the timing and utilization results are yours to discover.
+> **Verification status:** both testbenches pass in the Vivado 2019.2 simulator on Windows, using `scripts/run_sim.tcl`. They also pass in Icarus Verilog 12, using the RAMB18E1 and glbl models from AMD's open-source [UNISIM library](https://github.com/Xilinx/XilinxUnisimLibrary). The deep buffer also passes with `AW` = 11, 13 and 17 and with `GROUP` values that do not divide the bank count. The OOC implementation flow (`run_ooc.tcl`) has run end to end. The SLR pblock option and `run_xsim.sh` have not been tried yet.
 
 ## Requirements
 
