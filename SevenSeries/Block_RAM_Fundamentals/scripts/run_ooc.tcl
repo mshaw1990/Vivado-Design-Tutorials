@@ -98,7 +98,9 @@ foreach r [get_cells -quiet -hier -filter {REF_NAME =~ RAMB*}] {
     set s "unknown"
   }
   set w [expr {[get_property REF_NAME $r] eq "RAMB36E1" ? 1.0 : 0.5}]
-  dict incr per_slr $s 0
+  if {![dict exists $per_slr $s]} {
+    dict set per_slr $s 0.0
+  }
   dict set per_slr $s [expr {[dict get $per_slr $s] + $w}]
 }
 
