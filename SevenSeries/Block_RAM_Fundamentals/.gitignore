@@ -1,0 +1,6 @@
+vivado_project/
+ooc_runs/
+sim/build/
+*.jou
+*.log
+.Xil/

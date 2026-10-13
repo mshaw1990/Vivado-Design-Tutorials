@@ -9,12 +9,12 @@ This tutorial is a hands-on look at 7 Series block RAM (RAMB18E1 / RAMB36E1). Yo
 3. Measure the **Fmax gain from the BRAM output register** with an out-of-context (OOC) run.
 4. Build a **deep, pipelined, multi-bank buffer** and look at how it is placed across the **SLRs** of the XC7V2000T.
 
-> **Verification status:** both testbenches pass in Icarus Verilog 12, using the RAMB18E1 and glbl models from AMD's open-source [UNISIM library](https://github.com/Xilinx/XilinxUnisimLibrary). The deep buffer also passes with `AW` = 11, 13 and 17 and with `GROUP` values that do not divide the bank count. The xsim script, synthesis, OOC implementation and SLR pblock steps **have not been run in Vivado yet**, so the timing and utilization results are yours to discover.
+> **Verification status:** both testbenches pass in Icarus Verilog 12, using the RAMB18E1 and glbl models from AMD's open-source [UNISIM library](https://github.com/Xilinx/XilinxUnisimLibrary). The deep buffer also passes with `AW` = 11, 13 and 17 and with `GROUP` values that do not divide the bank count. The Vivado scripts (`run_sim.tcl`, `run_xsim.sh`), synthesis, OOC implementation and SLR pblock steps **have not been run in Vivado yet**, so the timing and utilization results are yours to discover.
 
 ## Requirements
 
 - Vivado (any recent release with 7 Series support). The XC7V2000T needs a **paid Vivado license**. It is not supported by the free Standard edition.
-- Linux shell for `run_xsim.sh`. On Windows, use `scripts/create_project.tcl` and simulate from the GUI.
+- Simulations run either inside Vivado with `scripts/run_sim.tcl` (any OS), or from a Linux shell with `sim/run_xsim.sh`.
 
 ## Directory structure
 
@@ -32,18 +32,45 @@ Block_RAM_Fundamentals/
 │   └── run_xsim.sh           Command-line simulation of both testbenches
 └── scripts/
     ├── create_project.tcl    Project-mode setup for GUI use
+    ├── run_sim.tcl           Source in Vivado to run both testbenches
     └── run_ooc.tcl           OOC synth + implementation with summary reports
 ```
 
 ---
 
-## Lab 1: Primitive vs inferred, write modes and latency
+## Running the simulations
+
+**Inside Vivado (any OS).** In the Tcl console, enter:
+
+```tcl
+source <path>/SevenSeries/Block_RAM_Fundamentals/scripts/run_sim.tcl
+```
+
+The script does the following:
+- creates (or reopens) `vivado_project/`
+- runs `tb_bram_tdp`, then `tb_bram_deep_buffer`
+- prints a PASSED/FAILED summary
+- in the GUI, leaves the last simulation open with its waveform window.
+
+To rerun one testbench and keep it open for waveforms:
+
+```tcl
+bram_sim tb_bram_tdp
+```
+
+You can also run it in batch mode: `vivado -mode batch -source scripts/run_sim.tcl`.
+
+**From a Linux shell:**
 
 ```bash
 source <Vivado install>/settings64.sh
 cd SevenSeries/Block_RAM_Fundamentals/sim
-./run_xsim.sh tb_bram_tdp
+./run_xsim.sh                    # both testbenches, or name one
 ```
+
+## Lab 1: Primitive vs inferred, write modes and latency
+
+Run `bram_sim tb_bram_tdp` in Vivado, or `./run_xsim.sh tb_bram_tdp` from a shell.
 
 The testbench instantiates six configurations, `{WRITE_FIRST, READ_FIRST, NO_CHANGE} x {DO_REG=0, DO_REG=1}`. Each configuration contains both the primitive and the inferred RAM.
 
@@ -59,7 +86,7 @@ The testbench instantiates six configurations, `{WRITE_FIRST, READ_FIRST, NO_CHA
 | 6 | reset (EN=1, WE=0) | `SRVAL = 0x2BEEF` one cycle later |
 | 7 | port B reads `mem[5]` | `0x55` |
 
-The messages from the six configurations are interleaved in the log, because each one reports at its own latency. Each check appears **1 cycle** after the operation when `DO_REG=0`, and **2 cycles** after when `DO_REG=1`. Open the waveform (add `--gui` to the `xsim` line in `run_xsim.sh`, or use the project in Lab 0 below) and look at `u_rf_r0` next to `u_rf_r1` to see the extra cycle.
+The messages from the six configurations are interleaved in the log, because each one reports at its own latency. Each check appears **1 cycle** after the operation when `DO_REG=0`, and **2 cycles** after when `DO_REG=1`. Open the waveform (`bram_sim tb_bram_tdp` in the Vivado GUI) and look at `u_rf_r0` next to `u_rf_r1` to see the extra cycle.
 
 **Random phase:** 5000 cycles of random traffic. Port A uses addresses 0–511 and port B uses 512–1023, so they never collide. The primitive and inferred outputs are compared on every cycle. The run ends with `TEST PASSED` or `TEST FAILED`.
 
@@ -96,10 +123,7 @@ Compare the `summary.txt` files under `ooc_runs/`:
 
 ## Lab 3: Deep buffer simulation
 
-```bash
-cd sim
-./run_xsim.sh tb_bram_deep_buffer
-```
+Run `bram_sim tb_bram_deep_buffer` in Vivado, or `./run_xsim.sh tb_bram_deep_buffer` from a shell.
 
 `bram_deep_buffer` is a 64K x 32 simple dual-port buffer built from 64 banks of 1K x 32. A reported read latency of **8** is expected:
 
@@ -153,7 +177,7 @@ For each run, `summary.txt` gives the number of BRAMs in each SLR, the setup WNS
 vivado -source scripts/create_project.tcl
 ```
 
-This creates `vivado_project/` with all sources. `tb_bram_tdp` is set as the simulation top. Run **Flow Navigator > Run Simulation** to get waveforms.
+This creates `vivado_project/` with all sources. `tb_bram_tdp` is set as the simulation top. Run **Flow Navigator > Run Simulation** to get waveforms. `scripts/run_sim.tcl` creates this project automatically if it does not exist.
 
 ## References
 

@@ -66,6 +66,7 @@ module tb_bram_tdp;
 
   integer n;
   integer errors;
+  reg     test_passed = 1'b0;   // read by scripts/run_sim.tcl
 
   initial begin
     $display("--------------------------------------------------------------");
@@ -137,7 +138,8 @@ module tb_bram_tdp;
              u_rf_r1.errors + u_nc_r0.errors + u_nc_r1.errors;
 
     $display("--------------------------------------------------------------");
-    if (errors == 0) $display("TEST PASSED");
+    test_passed = (errors == 0);
+    if (test_passed) $display("TEST PASSED");
     else             $display("TEST FAILED: %0d errors", errors);
     $display("--------------------------------------------------------------");
     $finish;

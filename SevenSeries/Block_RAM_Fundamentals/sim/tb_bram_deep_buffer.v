@@ -39,6 +39,7 @@ module tb_bram_deep_buffer;
   reg [DW-1:0] expq  [0:QD-1];
   reg [AW-1:0] addrq [0:QD-1];
   integer wp = 0, rp = 0, errors = 0, i, b;
+  reg     test_passed = 1'b0;   // read by scripts/run_sim.tcl
 
   initial for (i = 0; i < DEPTH; i = i + 1) model[i] = {DW{1'b0}};
 
@@ -112,8 +113,9 @@ module tb_bram_deep_buffer;
 
     $display("--------------------------------------------------------------");
     $display(" reads issued %0d, reads checked %0d, errors %0d", wp, rp, errors);
-    if (errors == 0 && rp == wp) $display("TEST PASSED");
-    else                         $display("TEST FAILED");
+    test_passed = (errors == 0) && (rp == wp);
+    if (test_passed) $display("TEST PASSED");
+    else             $display("TEST FAILED");
     $display("--------------------------------------------------------------");
     $finish;
   end
