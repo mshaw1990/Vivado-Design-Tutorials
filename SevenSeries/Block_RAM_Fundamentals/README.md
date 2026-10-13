@@ -60,6 +60,13 @@ bram_sim tb_bram_tdp
 
 You can also run it in batch mode: `vivado -mode batch -source scripts/run_sim.tcl`.
 
+**On Windows,** paths inside the generated simulation directories can exceed the 260-character limit. If your checkout is deep, put the project somewhere short before sourcing the script:
+
+```tcl
+set ::bram_project_dir D:/vp
+source <path>/SevenSeries/Block_RAM_Fundamentals/scripts/run_sim.tcl
+```
+
 **From a Linux shell:**
 
 ```bash

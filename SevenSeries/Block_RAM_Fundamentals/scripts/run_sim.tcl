@@ -14,7 +14,8 @@
 #   bram_sim tb_bram_deep_buffer
 #
 # The script opens vivado_project/bram_7series.xpr, creating it with
-# create_project.tcl first if it does not exist. Project mode adds the UNISIM
+# create_project.tcl first if it does not exist. To use a shorter project
+# path (useful on Windows), set ::bram_project_dir before sourcing. Project mode adds the UNISIM
 # library and glbl.v automatically.
 #------------------------------------------------------------------------------
 namespace eval ::bram_sim {
@@ -34,7 +35,12 @@ proc ::bram_sim::open_tutorial_project {} {
     return
   }
 
-  set xpr [file join $root vivado_project ${proj_name}.xpr]
+  if {[info exists ::bram_project_dir]} {
+    set proj_dir [file normalize $::bram_project_dir]
+  } else {
+    set proj_dir [file join $root vivado_project]
+  }
+  set xpr [file join $proj_dir ${proj_name}.xpr]
   if {[file exists $xpr]} {
     puts "INFO: Opening $xpr"
     open_project $xpr
@@ -71,7 +77,9 @@ proc bram_sim {{tests ""} {keep_open 1}} {
     puts "=============================================================="
     set_property top     $tb            $simset
     set_property top_lib xil_defaultlib $simset
-    update_compile_order -fileset sim_1
+    if {[catch {update_compile_order -fileset sim_1} err]} {
+      puts "WARNING: update_compile_order failed, continuing:\n$err"
+    }
 
     set log [file join $sim_dir simulate.log]
     file delete -force $log
