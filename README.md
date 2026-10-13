@@ -19,6 +19,10 @@ The Vivado In-Depth Tutorials takes users through the design methodology and pro
 
 Learn how to use Vivado and low-level software frameworks to target any AMD programmable architectures.
 
+### [7 Series Tutorials](./SevenSeries)
+
+Learn how to target device-specific features for AMD 7 Series architectures.
+
 ### [UltraScale+ Tutorials](./UltraScalePlus)
 
 Learn how to target device-specific features for AMD UltraScale+ architectures.
