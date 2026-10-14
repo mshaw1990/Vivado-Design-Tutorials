@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_bram_tdp_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_bram_tdp" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="10266878fs"></ZoomEndTime>
+      <Cursor1Time time="50380000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="46" />
+   <wvobject fp_name="/tb_bram_tdp/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/en_a" type="logic">
+      <obj_property name="ElementShortName">en_a</obj_property>
+      <obj_property name="ObjectShortName">en_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/we_a" type="logic">
+      <obj_property name="ElementShortName">we_a</obj_property>
+      <obj_property name="ObjectShortName">we_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/rst_a" type="logic">
+      <obj_property name="ElementShortName">rst_a</obj_property>
+      <obj_property name="ObjectShortName">rst_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/din_a" type="array">
+      <obj_property name="ElementShortName">din_a[17:0]</obj_property>
+      <obj_property name="ObjectShortName">din_a[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/en_b" type="logic">
+      <obj_property name="ElementShortName">en_b</obj_property>
+      <obj_property name="ObjectShortName">en_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/we_b" type="logic">
+      <obj_property name="ElementShortName">we_b</obj_property>
+      <obj_property name="ObjectShortName">we_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/rst_b" type="logic">
+      <obj_property name="ElementShortName">rst_b</obj_property>
+      <obj_property name="ObjectShortName">rst_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/din_b" type="array">
+      <obj_property name="ElementShortName">din_b[17:0]</obj_property>
+      <obj_property name="ObjectShortName">din_b[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_a" type="logic">
+      <obj_property name="ElementShortName">chk_a</obj_property>
+      <obj_property name="ObjectShortName">chk_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_wf" type="array">
+      <obj_property name="ElementShortName">exp_wf[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_wf[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_rf" type="array">
+      <obj_property name="ElementShortName">exp_rf[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_rf[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_nc" type="array">
+      <obj_property name="ElementShortName">exp_nc[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_nc[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_b" type="logic">
+      <obj_property name="ElementShortName">chk_b</obj_property>
+      <obj_property name="ObjectShortName">chk_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_b" type="array">
+      <obj_property name="ElementShortName">exp_b[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_b[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_rst" type="logic">
+      <obj_property name="ElementShortName">chk_rst</obj_property>
+      <obj_property name="ObjectShortName">chk_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/compare_on" type="logic">
+      <obj_property name="ElementShortName">compare_on</obj_property>
+      <obj_property name="ObjectShortName">compare_on</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/n" type="array">
+      <obj_property name="ElementShortName">n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">n[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/errors" type="array">
+      <obj_property name="ElementShortName">errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/test_passed" type="logic">
+      <obj_property name="ElementShortName">test_passed</obj_property>
+      <obj_property name="ObjectShortName">test_passed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/SRVAL" type="array">
+      <obj_property name="ElementShortName">SRVAL[17:0]</obj_property>
+      <obj_property name="ObjectShortName">SRVAL[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/en_a" type="logic">
+      <obj_property name="ElementShortName">en_a</obj_property>
+      <obj_property name="ObjectShortName">en_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/we_a" type="logic">
+      <obj_property name="ElementShortName">we_a</obj_property>
+      <obj_property name="ObjectShortName">we_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/rst_a" type="logic">
+      <obj_property name="ElementShortName">rst_a</obj_property>
+      <obj_property name="ObjectShortName">rst_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/din_a" type="array">
+      <obj_property name="ElementShortName">din_a[17:0]</obj_property>
+      <obj_property name="ObjectShortName">din_a[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/en_b" type="logic">
+      <obj_property name="ElementShortName">en_b</obj_property>
+      <obj_property name="ObjectShortName">en_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/we_b" type="logic">
+      <obj_property name="ElementShortName">we_b</obj_property>
+      <obj_property name="ObjectShortName">we_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/rst_b" type="logic">
+      <obj_property name="ElementShortName">rst_b</obj_property>
+      <obj_property name="ObjectShortName">rst_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/din_b" type="array">
+      <obj_property name="ElementShortName">din_b[17:0]</obj_property>
+      <obj_property name="ObjectShortName">din_b[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_a" type="logic">
+      <obj_property name="ElementShortName">chk_a</obj_property>
+      <obj_property name="ObjectShortName">chk_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_wf" type="array">
+      <obj_property name="ElementShortName">exp_wf[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_wf[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_rf" type="array">
+      <obj_property name="ElementShortName">exp_rf[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_rf[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_nc" type="array">
+      <obj_property name="ElementShortName">exp_nc[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_nc[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_b" type="logic">
+      <obj_property name="ElementShortName">chk_b</obj_property>
+      <obj_property name="ObjectShortName">chk_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/exp_b" type="array">
+      <obj_property name="ElementShortName">exp_b[17:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_b[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/chk_rst" type="logic">
+      <obj_property name="ElementShortName">chk_rst</obj_property>
+      <obj_property name="ObjectShortName">chk_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/compare_on" type="logic">
+      <obj_property name="ElementShortName">compare_on</obj_property>
+      <obj_property name="ObjectShortName">compare_on</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/n" type="array">
+      <obj_property name="ElementShortName">n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">n[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/errors" type="array">
+      <obj_property name="ElementShortName">errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/test_passed" type="logic">
+      <obj_property name="ElementShortName">test_passed</obj_property>
+      <obj_property name="ObjectShortName">test_passed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_bram_tdp/SRVAL" type="array">
+      <obj_property name="ElementShortName">SRVAL[17:0]</obj_property>
+      <obj_property name="ObjectShortName">SRVAL[17:0]</obj_property>
+   </wvobject>
+</wave_config>

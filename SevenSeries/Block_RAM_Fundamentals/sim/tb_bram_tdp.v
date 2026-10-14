@@ -65,7 +65,7 @@ module tb_bram_tdp;
   endtask
 
   integer n;
-  integer errors;
+  integer errors=0;
   reg     test_passed = 1'b0;   // read by scripts/run_sim.tcl
 
   initial begin
